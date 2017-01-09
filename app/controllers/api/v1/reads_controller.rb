@@ -8,4 +8,9 @@ class Api::V1::ReadsController < ApplicationController
       render json: @read.errors.full_messages, status: 500
     end
   end
+
+  def index
+    @reads = Read.top_reads
+    render json: @reads
+  end
 end
