@@ -49,6 +49,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'poltergeist'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
