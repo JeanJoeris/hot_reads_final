@@ -1,11 +1,6 @@
 class LinkService
   def self.fetch_by_id(link_id)
-    if Rails.env == "production"
-      urlockbox_url = "https://jj-hot-reads.herokuapp.com/api/v1/links/#{link_id}"
-    else
-      urlockbox_url = "http://localhost:3050/api/v1/links/#{link_id}"
-    end
-    response = Faraday.get(urlockbox_url)
+    response = Faraday.get("http://localhost:3050/api/v1/links/#{link_id}")
     Link.new(JSON.parse(response.body, symbolize_names: true))
   end
 
