@@ -1,0 +1,9 @@
+<h2>Hot Reads!</h2>
+<ol id="hot-reads">
+  <img src="https://m.popkey.co/4c7272/QL6mJ.gif">
+  <% @hot_links.each_with_index do |read, i| %>
+  <li class='hot-read'>
+    <a href="<%= read.url %>"><%= read.title %></a>
+  </li>
+  <% end %>
+</ol>
