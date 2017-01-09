@@ -5,6 +5,7 @@ class LinkService
     else
       urlockbox_url = "http://localhost:3050/api/v1/links/#{link_id}"
     end
+
     response = Faraday.get(urlockbox_url)
     Link.new(JSON.parse(response.body, symbolize_names: true))
   end
