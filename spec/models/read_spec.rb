@@ -38,7 +38,7 @@ RSpec.describe Read, type: :model do
   it "finds only reads from last 24 hrs" do
     create(:read)
     20.times do
-      create(:read, created_at: 5.days.ago)g
+      create(:read, created_at: 5.days.ago)
     end
 
     top_reads = Read.top_reads
