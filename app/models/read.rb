@@ -5,6 +5,6 @@ class Read < ApplicationRecord
   end
 
   def self.top_reads
-    group(:link_id).count
+    group(:link_id).where('created_at > ?', 1.day.ago).order('count(*) desc').limit(10).count
   end
 end
